@@ -1,5 +1,9 @@
-import pygame, sys, random
+import pygame
+import random
+import sys
+
 from pygame.locals import *
+
 pygame.init()
 screen_info = pygame.display.Info()
 #size = (width, height) = (int(screen_info.current_w)), (int(screen_info.current_h))
@@ -30,11 +34,12 @@ def main():
         for event in pygame.event.get():
             if event.type == QUIT:
                 sys.exit()
-        screen.fill(color)
+
+        move_fish()
+        screen.fill((0, 127, 255))
         screen.blit(fish_image, fish_rect)
         pygame.display.flip()
 
 
 if __name__ == '__main__':
     main()
-    move_fish()
